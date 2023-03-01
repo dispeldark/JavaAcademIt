@@ -1,7 +1,5 @@
 package ru.academits.java.aleksandrov;
 
-import java.time.LocalDate;
-
 public class Person {
     private String name;
     private String middleName;
