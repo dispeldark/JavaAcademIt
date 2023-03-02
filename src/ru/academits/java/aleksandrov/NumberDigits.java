@@ -12,8 +12,9 @@ public class NumberDigits {
         int digitsSum = 0;
         int oddDigitsSum = 0;
         int maxDigit = 0;
+        int numberModulus = Math.abs(number);
 
-        for (int i = number; i != 0; i /= 10) {
+        for (int i = numberModulus; i != 0; i /= 10) {
             int digit = i % 10;
             digitsSum += digit;
 
