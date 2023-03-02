@@ -1,6 +1,6 @@
 package ru.academits.java.aleksandrov;
 
-public class ForCycle {
+public class ForLoop {
     public static void main(String[] args) {
         for (int i = 100; i > 0; i--) {
             if (checkDivisibilityBy4(i)) {
