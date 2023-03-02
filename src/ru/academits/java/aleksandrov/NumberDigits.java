@@ -7,13 +7,13 @@ public class NumberDigits {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите целое число: ");
-        int number = scanner.nextInt();
+        int number = Math.abs(scanner.nextInt());
 
         int digitsSum = 0;
         int oddDigitsSum = 0;
         int maxDigit = 0;
 
-        for (int i = Math.abs(number); i != 0; i /= 10) {
+        for (int i = number; i != 0; i /= 10) {
             int digit = i % 10;
             digitsSum += digit;
 
