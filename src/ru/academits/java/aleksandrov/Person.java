@@ -1,10 +1,14 @@
 package ru.academits.java.aleksandrov;
 
+import java.time.YearMonth;
+
 public class Person {
     private String name;
     private String middleName;
     private String familyName;
     private int age;
+    public static final int minAge = 15;
+    public static final int maxAge = 115;
 
     public Person(String name, String middleName, String familyName, int age) {
         this.name = name;
@@ -18,7 +22,9 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name.matches("[a-zA-Zа-яА-Я]+")) {
+            this.name = name;
+        }
     }
 
     public String getMiddleName() {
@@ -26,7 +32,9 @@ public class Person {
     }
 
     public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+        if (middleName.matches("[a-zA-Zа-яА-Я]+")) {
+            this.middleName = middleName;
+        }
     }
 
     public String getFamilyName() {
@@ -34,7 +42,9 @@ public class Person {
     }
 
     public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+        if (familyName.matches("[a-zA-Zа-яА-Я]+")) {
+            this.familyName = familyName;
+        }
     }
 
     public int getAge() {
@@ -42,7 +52,9 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age >= minAge && age <= maxAge) {
+            this.age = age;
+        }
     }
 
     @Override
@@ -51,7 +63,7 @@ public class Person {
     }
 
     public int getBirthYear() {
-        int currentYear = 2023;
+        int currentYear = YearMonth.now().getYear();
         return currentYear - getAge();
     }
 }
